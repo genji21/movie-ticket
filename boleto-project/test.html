@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <ul id="comment_block">
+        
+    </ul>
+   <script>
+var users = [
+    {
+        id : 1 ,
+        name :"truongphi"
+    },
+    {
+        id : 2 ,
+        name :"phitruong"
+    },
+    {
+        id : 3 ,
+        name :"sondang"
+    }
+]
+var comment = [
+    {
+        id:1,
+        user_id:1,
+        content:"Anh sơn chưa ra video"
+    },
+
+    {
+        id:3,
+        user_id:1,
+
+        content:"Sap ra video chua a "
+    },
+    {
+        id:2,
+        user_id:3,
+        content:"test nè các bạn"
+    },
+    {
+        id:4,
+        user_id:2,
+        content:"Sap ra video roi em oi  " 
+    },
+    
+]
+function getComments(){
+    return new Promise(function(resolve) { 
+        setTimeout(function() {
+            resolve(comment);
+        },1000)
+    })
+}
+getComments()
+.then(function(comments) {
+console.log(comments)
+var userID =comments.map(function(comment,index) {
+    return comment.user_id ;
+})
+console.log(userID)
+ return getUsersById(userID)
+        .then(function (users) {
+            console.log(users)
+        return {
+            users : users,
+            comments :comments
+        } ;
+    // console.log(userID)
+});
+// console.log(comments.user_id)
+// console.log(userID)
+})
+.then(function(data){
+    console.log(data)
+var commentBlocks =document.getElementById("comment_block");
+var html = '';
+
+data.comments.forEach(function(comment) {
+var user = data.users.find(function( user) {
+    console.log(user.id === comment.user_id)
+    return user.id === comment.user_id;
+})
+console.log(user)
+html += `${user.name} : ${comment.content}`
+commentBlocks.innerHTML = html
+})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getUsersById(userID) {
+    return new Promise(function (resolves) {
+       var result = users.filter(function(user) {
+                return userID.includes(user.id)
+       }); 
+       resolves(result)
+    })
+    
+}
+
+   </script>
+
+
+</html>

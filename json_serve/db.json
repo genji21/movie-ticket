@@ -1,0 +1,14 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "name": "typescript",
+      "descriotion": "khóa học lập trình javascript,kiến thức cơ bản tổng quan cho người mới bắt đầu"
+    },
+    {
+      "id": 4,
+      "name": "PHP",
+      "descriotion": "khóa học lập trình javascript,kiến thức cơ bản tổng quan cho người mới bắt đầu"
+    }
+  ]
+}

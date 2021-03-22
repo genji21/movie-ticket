@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:white;
+}
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background:transparent ;
+    border-bottom: 1px solid rgba(255,255,255,0.102);
+    padding:21px 0;
+    z-index: 999;
+}
+nav.bg-light{
+    background-color: transparent!important;
+}
+.navbar-light .navbar-nav .nav-link {
+    color:white;    
+    text-transform: uppercase;
+}
+.primary-btn-custom{
+background-image:-webkit-linear-gradient(
+    169deg,#5560ff 17%,#aa52a1 63%,
+    #ff4343
+) ;   
+padding: 10px 49px!important;
+border-radius: 1000px;
+border: none;
+outline:none;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.primary-btn-custom img{
+    max-width: 20px;
+    margin-right:10px;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color:white;
+}
+.header-active{
+    background:#0a1e5e;
+    border: none;
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+}
+
+@keyframes fadeInDown{
+    0%{
+        opacity: 0;
+        transform:translate(0,-100%)
+    }
+    50%{
+        opacity: 0.5;
+        transform:translate(0,0)
+
+    }
+    100%{
+        opacity: 1;
+        transform:translate(0,0)
+    }
+}
+/* carousel */
+#movie_list{
+    background:url(../img/banner04.png);
+    min-height:50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#movie_detail{
+    min-height: 50vh;
+    background-color:#001232;
+    text-align: center;
+    color:white;
+}
+#movie_detail h3{
+    font-size: 4rem;
+}
+#movie_detail p{
+    font-size: 1.5rem;
+}
+.item{
+    /* min-width: 200px; */
+    /* min-height: 200px; */
+    background-color: tomato;
+    /* height: 100%; */
+}
+.card{
+    /* height:100%; */
+}
+
+.owl-item .item .card  img{
+    display: block;
+    height:400px;
+    object-fit: cover;
+    /* width:100%; */
+}
+#movie-carousel{
+    max-width: 80%;
+    padding-top: 100px;
+}
+#movie_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+background-color: #032055;
+}
+/* seat */
+#seat-container{
+    background-color: #001232;
+    padding: 50px 0;
+}
+.seats{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.seat{
+    margin-bottom: 20px;
+    min-width: 12.5%;
+    
+}
+.seat img{
+    /* hủy bỏ sự kiên event click của  thẻ cha img chính là thẻ .seat    */
+    pointer-events: none;
+    
+}
+.seat:hover {
+    transform:translate(0px,-1px) scale(1.1);
+}
+.booked img{
+    filter: grayscale(0.5);
+}
+.selected img{
+    filter:invert(1);
+}
+/* seat-list-selected-contaner */
+#seat-list-container{
+    background-color: #001232;
+    /* margin-bottom: 50px; */
+    
+}   
+#seat-list-container .container{
+    background-image: url(../img/movie-bg-proceed.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.seat-list-box{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    text-align: left;
+    /* height: 20vh; */
+    /* margin-top: 200px; */
+}
+.seat-list-box h4{
+    color: #ffffff;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 14px;
+}
+.seat-list-choosed{
+}
